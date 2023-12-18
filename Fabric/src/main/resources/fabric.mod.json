@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "id": "villagespawnpoint",
-  "version": "4.1",
+  "version": "4.2",
 
   "name": "Village Spawn Point",
   "description": "Sets the spawn point of a new world to always be in the center of a village.",
   "authors": [ "Rick South" ],
   "contact": {
-    "homepage": "https://curseforge.com/minecraft/mc-mods/village-spawn-point",
-    "sources": "https://github.com/ricksouth/serilum-mc-mod-sources/tree/main/sources/Village%20Spawn%20Point",
-    "issues": "https://github.com/ricksouth/serilum-mc-mods/labels/Mod:%20Village%20Spawn%20Point"
+    "homepage": "https://serilum.com/mod/village-spawn-point",
+    "sources": "https://github.com/Serilum/Village-Spawn-Point",
+    "issues": "https://github.com/Serilum/.issue-tracker/labels/Mod:%20Village%20Spawn%20Point"
   },
 
   "license": "All Right Reserved",
@@ -23,7 +23,7 @@
     "fabric": "*",
     "minecraft": ">=1.20",
     "java": ">=17",
-    "collective": ">=7.3"
+    "collective": ">=7.21"
   },
 
   "custom": {
