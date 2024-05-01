@@ -1,0 +1,34 @@
+modLoader="javafml"
+loaderVersion="*"
+license="All rights reserved"
+issueTrackerURL="https://github.com/Serilum/.issue-tracker/labels/Mod:%20Village%20Spawn%20Point"
+logoFile="icon.png"
+
+[[mods]]
+modId="villagespawnpoint"
+version="4.3"
+displayName="Village Spawn Point"
+displayURL="https://serilum.com/mod/village-spawn-point"
+authors="Rick South"
+description='''Sets the spawn point of a new world to always be in the center of a village.
+'''
+credits='''Thank you very much to my Membership sponsors for supporting the development of this mod:  
+
+Alister, Andrean Olgo, aternosorg, BirdieMiner, Cherriesaurus, Jack, Jeremy Langford, Michael W. S., pepe1191, Shana Gitnick, Tyler Behl   
+
+If you would like to contribute too, check out https://serilum.com/donate. Appreciate it! <3   
+'''
+
+[[dependencies.villagespawnpoint]]
+    modId="collective"
+    mandatory=true
+    versionRange="[7.54,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.villagespawnpoint]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.6]"
+    ordering="NONE"
+    side="BOTH"
