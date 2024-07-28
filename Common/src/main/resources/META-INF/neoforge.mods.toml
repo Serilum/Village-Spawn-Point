@@ -6,7 +6,7 @@ logoFile="icon.png"
 
 [[mods]]
 modId="villagespawnpoint"
-version="4.2"
+version="4.4"
 displayName="Village Spawn Point"
 displayURL="https://serilum.com/mod/village-spawn-point"
 authors="Rick South"
@@ -14,7 +14,7 @@ description='''Sets the spawn point of a new world to always be in the center of
 '''
 credits='''Thank you very much to my Membership sponsors for supporting the development of this mod:  
 
-Alister, Andrean Olgo, aternosorg, BirdieMiner, Cherriesaurus, Jack, Jeremy Langford, Michael W. S., pepe1191, Shana Gitnick, Tyler Behl   
+Alister, Andrean Olgo, aternosorg, Cherriesaurus, Michael W. S., Nahuel Fernandez, Shana Gitnick, Tyler Behl   
 
 If you would like to contribute too, check out https://serilum.com/donate. Appreciate it! <3   
 '''
@@ -22,7 +22,7 @@ If you would like to contribute too, check out https://serilum.com/donate. Appre
 [[dependencies.villagespawnpoint]]
     modId="collective"
     type="required"
-    versionRange="[7.54,)"
+    versionRange="[7.78,)"
     ordering="NONE"
     side="BOTH"
 
