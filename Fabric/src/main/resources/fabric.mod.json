@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "villagespawnpoint",
+  "version": "4.4",
+
+  "name": "Village Spawn Point",
+  "description": "Sets the spawn point of a new world to always be in the center of a village.",
+  "authors": [ "Rick South" ],
+  "contact": {
+    "homepage": "https://serilum.com/mod/village-spawn-point",
+    "sources": "https://github.com/Serilum/Village-Spawn-Point",
+    "issues": "https://github.com/Serilum/.issue-tracker/labels/Mod:%20Village%20Spawn%20Point"
+  },
+
+  "license": "All Right Reserved",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": { "main": [ "com.natamus.villagespawnpoint.ModFabric" ] },
+
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric": "*",
+    "minecraft": ">=1.21",
+    "java": ">=21",
+    "collective": ">=7.89"
+  },
+
+  "custom": {
+    "modmenu": {
+      "links": {
+        "Donate <3" : "https://ricksouth.com/donate"
+      }
+    }
+  },
+
+  "contributors": [
+	  " ",
+	  "Thank you very much to my Membership sponsors for supporting the development of this mod!",
+	  " ",
+	  "If you would like to contribute too, check out https://serilum.com/donate.",
+	  " ",
+	  "Membership sponsors:",
+	  " Alister",
+	  " Andrean Olgo",
+	  " aternosorg",
+	  " Cherriesaurus",
+	  " LyraKeaton",
+	  " Michael W. S.",
+	  " Tyler Behl",
+	  " XAgent"
+  ]
+}
