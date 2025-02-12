@@ -7,12 +7,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.ServerLevelData;
 import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@EventBusSubscriber
 public class ForgeVillageSpawnEvent {
 	@SubscribeEvent(receiveCanceled = true)
-	public void onWorldLoad(LevelEvent.CreateSpawnPosition e) {
+	public static void onWorldLoad(LevelEvent.CreateSpawnPosition e) {
 		Level level = WorldFunctions.getWorldIfInstanceOfAndNotRemote(e.getLevel());
 		if (level == null) {
 			return;
