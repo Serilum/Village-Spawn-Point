@@ -3,6 +3,7 @@ package com.natamus.villagespawnpoint;
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.villagespawnpoint.data.Constants;
+import com.natamus.villagespawnpoint.forge.config.IntegrateForgeConfig;
 import com.natamus.villagespawnpoint.forge.events.ForgeVillageSpawnEvent;
 import com.natamus.villagespawnpoint.util.Reference;
 import net.minecraftforge.common.MinecraftForge;
@@ -25,6 +26,8 @@ public class ModForge {
 
 		setGlobalConstants();
 		ModCommon.init();
+
+		IntegrateForgeConfig.registerScreen(modLoadingContext);
 
 		RegisterMod.register(Reference.NAME, Reference.MOD_ID, Reference.VERSION, Reference.ACCEPTED_VERSIONS);
 	}
