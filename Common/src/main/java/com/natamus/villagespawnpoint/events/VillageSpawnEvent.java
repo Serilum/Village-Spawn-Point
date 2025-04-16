@@ -3,6 +3,7 @@ package com.natamus.villagespawnpoint.events;
 import com.mojang.logging.LogUtils;
 import com.natamus.collective.functions.BlockPosFunctions;
 import com.natamus.collective.functions.FeatureFunctions;
+import com.natamus.villagespawnpoint.config.ConfigHandler;
 import com.natamus.villagespawnpoint.data.Constants;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -25,17 +26,23 @@ public class VillageSpawnEvent {
 		}
 
 		logger.info("[Village Spawn Point] Finding the nearest village. This might take a few seconds.");
-		BlockPos spawnpos = BlockPosFunctions.getCenterNearbyVillage(serverLevel);
-		if (spawnpos == null) {
-			return false;
+		BlockPos spawnPos = BlockPosFunctions.getNearbyVillage(serverLevel, new BlockPos(0, 0, 0), ConfigHandler.locateVillageTag);
+		if (spawnPos == null) {
+			if (ConfigHandler.keepDefaultVillageTagBackup && !ConfigHandler.locateVillageTag.equals("#minecraft:village")) {
+				spawnPos = BlockPosFunctions.getNearbyVillage(serverLevel, new BlockPos(0, 0, 0), "#minecraft:village");
+			}
+
+			if (spawnPos == null) {
+				return false;
+			}
 		}
 
 		logger.info("[Village Spawn Point] Village found! The world will now generate.");
 
-		serverLevel.setDefaultSpawnPos(spawnpos, 1.0f);
+		serverLevel.setDefaultSpawnPos(spawnPos, 1.0f);
 
 		if (worldGeneratorOptions.generateBonusChest()) {
-			FeatureFunctions.placeBonusChest(serverLevel, spawnpos);
+			FeatureFunctions.placeBonusChest(serverLevel, spawnPos);
 		}
 
 		return true;
