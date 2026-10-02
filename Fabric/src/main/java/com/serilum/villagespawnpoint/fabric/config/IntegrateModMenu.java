@@ -1,7 +1,7 @@
-package com.natamus.villagespawnpoint.fabric.config;
+package com.serilum.villagespawnpoint.fabric.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.villagespawnpoint.util.Reference;
+import com.serilum.villagespawnpoint.util.Reference;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 

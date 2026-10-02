@@ -1,11 +1,11 @@
-package com.natamus.villagespawnpoint;
+package com.serilum.villagespawnpoint;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.collective.fabric.callbacks.CollectiveMinecraftServerEvents;
 import com.natamus.collective.fabric.data.GlobalFabricObjects;
-import com.natamus.villagespawnpoint.events.VillageSpawnEvent;
-import com.natamus.villagespawnpoint.util.Reference;
+import com.serilum.villagespawnpoint.events.VillageSpawnEvent;
+import com.serilum.villagespawnpoint.util.Reference;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.storage.ServerLevelData;

@@ -1,10 +1,10 @@
-package com.natamus.villagespawnpoint.events;
+package com.serilum.villagespawnpoint.events;
 
 import com.mojang.logging.LogUtils;
 import com.natamus.collective.functions.BlockPosFunctions;
 import com.natamus.collective.functions.FeatureFunctions;
-import com.natamus.villagespawnpoint.config.ConfigHandler;
-import com.natamus.villagespawnpoint.data.Constants;
+import com.serilum.villagespawnpoint.config.ConfigHandler;
+import com.serilum.villagespawnpoint.data.Constants;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.levelgen.WorldOptions;

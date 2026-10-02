@@ -1,11 +1,11 @@
-package com.natamus.villagespawnpoint;
+package com.serilum.villagespawnpoint;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
-import com.natamus.villagespawnpoint.data.Constants;
-import com.natamus.villagespawnpoint.forge.config.IntegrateForgeConfig;
-import com.natamus.villagespawnpoint.forge.events.ForgeVillageSpawnEvent;
-import com.natamus.villagespawnpoint.util.Reference;
+import com.serilum.villagespawnpoint.data.Constants;
+import com.serilum.villagespawnpoint.forge.config.IntegrateForgeConfig;
+import com.serilum.villagespawnpoint.forge.events.ForgeVillageSpawnEvent;
+import com.serilum.villagespawnpoint.util.Reference;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
@@ -34,7 +34,7 @@ public class ModForge {
 	}
 
 	private void loadComplete(final FMLLoadCompleteEvent event) {
-    	MinecraftForge.EVENT_BUS.register(ForgeVillageSpawnEvent.class);
+		MinecraftForge.EVENT_BUS.register(ForgeVillageSpawnEvent.class);
 	}
 
 	private static void setGlobalConstants() {

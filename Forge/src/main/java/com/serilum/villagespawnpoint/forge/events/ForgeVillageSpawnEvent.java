@@ -1,7 +1,7 @@
-package com.natamus.villagespawnpoint.forge.events;
+package com.serilum.villagespawnpoint.forge.events;
 
 import com.natamus.collective.functions.WorldFunctions;
-import com.natamus.villagespawnpoint.events.VillageSpawnEvent;
+import com.serilum.villagespawnpoint.events.VillageSpawnEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.ServerLevelData;

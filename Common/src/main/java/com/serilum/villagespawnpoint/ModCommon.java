@@ -1,7 +1,7 @@
-package com.natamus.villagespawnpoint;
+package com.serilum.villagespawnpoint;
 
 
-import com.natamus.villagespawnpoint.config.ConfigHandler;
+import com.serilum.villagespawnpoint.config.ConfigHandler;
 
 public class ModCommon {
 

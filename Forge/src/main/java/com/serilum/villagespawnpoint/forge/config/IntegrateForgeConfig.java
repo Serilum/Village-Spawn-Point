@@ -1,7 +1,7 @@
-package com.natamus.villagespawnpoint.forge.config;
+package com.serilum.villagespawnpoint.forge.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.villagespawnpoint.util.Reference;
+import com.serilum.villagespawnpoint.util.Reference;
 import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.fml.ModLoadingContext;
 

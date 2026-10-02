@@ -1,7 +1,7 @@
-package com.natamus.villagespawnpoint.config;
+package com.serilum.villagespawnpoint.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.villagespawnpoint.util.Reference;
+import com.serilum.villagespawnpoint.util.Reference;
 
 import java.util.Arrays;
 import java.util.HashMap;
