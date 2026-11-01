@@ -2,11 +2,11 @@ modLoader="javafml"
 loaderVersion="*"
 license="All Rights Reserved"
 issueTrackerURL="https://github.com/Serilum/.issue-tracker/labels/Mod:%20Village%20Spawn%20Point"
-iconFile="icon.png"
+logoFile="icon.png"
 
 [[mods]]
 modId="villagespawnpoint"
-version="4.8"
+version="5.0"
 displayName="Village Spawn Point"
 displayURL="https://serilum.com/mod/village-spawn-point"
 authors="Serilum"
@@ -22,7 +22,7 @@ If you would like to contribute too, check out https://serilum.com/donate Apprec
 [[dependencies.villagespawnpoint]]
     modId="collective"
     type="required"
-    versionRange="[8.67,)"
+    versionRange="[8.73,)"
     ordering="NONE"
     side="BOTH"
 
