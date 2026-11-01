@@ -5,6 +5,7 @@ import com.serilum.villagespawnpoint.events.VillageSpawnEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.ServerLevelData;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -20,5 +21,10 @@ public class ForgeVillageSpawnEvent {
 		if (VillageSpawnEvent.onWorldLoad(serverLevel, (ServerLevelData)serverLevel.getLevelData())) {
 			e.setCanceled(true);
 		}
+	}
+
+	@SubscribeEvent
+	public static void onEntityJoin(EntityJoinLevelEvent e) {
+		VillageSpawnEvent.onEntityJoin(e.getLevel(), e.getEntity());
 	}
 }
