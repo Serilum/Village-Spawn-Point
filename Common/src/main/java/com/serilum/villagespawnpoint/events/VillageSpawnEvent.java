@@ -1,11 +1,10 @@
 package com.serilum.villagespawnpoint.events;
 
-import com.mojang.logging.LogUtils;
 import com.natamus.collective.functions.ConfigFunctions;
 import com.natamus.collective.functions.FeatureFunctions;
 import com.natamus.collective.functions.PlayerFunctions;
+import com.natamus.collective.functions.VillageSpawnFunctions;
 import com.serilum.villagespawnpoint.config.ConfigHandler;
-import com.serilum.villagespawnpoint.data.Constants;
 import com.serilum.villagespawnpoint.util.Reference;
 import com.serilum.villagespawnpoint.util.Util;
 import net.minecraft.core.BlockPos;
@@ -13,46 +12,18 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.levelgen.WorldOptions;
 import net.minecraft.world.level.storage.ServerLevelData;
-import org.slf4j.Logger;
 
 public class VillageSpawnEvent {
-	private static final Logger logger = LogUtils.getLogger();
-
 	public static boolean onWorldLoad(ServerLevel serverLevel, ServerLevelData serverLevelData) {
-		if (Constants.biomeSpawnPointLoaded) {
-			return false;
-		}
-
-		if (!ConfigFunctions.isModEnabled(Reference.MOD_ID)) {
-			return false;
-		}
-
-		WorldOptions worldGeneratorOptions = serverLevel.getServer().getWorldData().worldGenOptions();
-
-		if (!worldGeneratorOptions.generateStructures()) {
-			return false;
-		}
-
-		logger.info("[Village Spawn Point] Finding the nearest village. This might take a few seconds.");
-		BlockPos spawnPos = Util.getNearbyVillageSpawnPos(serverLevel, ConfigHandler.locateVillageTag);
+		BlockPos spawnPos = Util.findNewWorldVillageSpawnPos(serverLevel);
 		if (spawnPos == null) {
-			if (ConfigHandler.keepDefaultVillageTagBackup && !ConfigHandler.locateVillageTag.equals("#minecraft:village")) {
-				spawnPos = Util.getNearbyVillageSpawnPos(serverLevel, "#minecraft:village");
-			}
-
-			if (spawnPos == null) {
-				logger.info("[Village Spawn Point] No village found. The world will generate with the default spawn point.");
-				return false;
-			}
+			return false;
 		}
-
-		logger.info("[Village Spawn Point] Village found! The world will now generate.");
 
 		serverLevel.setDefaultSpawnPos(spawnPos, 1.0f);
 
-		if (worldGeneratorOptions.generateBonusChest()) {
+		if (serverLevel.getServer().getWorldData().worldGenOptions().generateBonusChest()) {
 			FeatureFunctions.placeBonusChest(serverLevel, spawnPos);
 		}
 
@@ -81,8 +52,12 @@ public class VillageSpawnEvent {
 		}
 
 		ServerLevel serverLevel = (ServerLevel)level;
+		if (!Util.isSpawnInVillageEnabled(serverLevel.getServer())) {
+			return;
+		}
+
 		BlockPos worldSpawnPos = serverLevel.getSharedSpawnPos();
-		if (!Util.isUnderground(serverLevel, worldSpawnPos)) {
+		if (!VillageSpawnFunctions.isUnderground(serverLevel, worldSpawnPos)) {
 			return;
 		}
 
