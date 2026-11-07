@@ -3,8 +3,6 @@ package com.serilum.villagespawnpoint;
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.collective.fabric.callbacks.CollectiveMinecraftServerEvents;
-import com.natamus.collective.fabric.data.GlobalFabricObjects;
-import com.serilum.villagespawnpoint.data.Constants;
 import com.serilum.villagespawnpoint.events.VillageSpawnEvent;
 import com.serilum.villagespawnpoint.util.Reference;
 import net.fabricmc.api.ModInitializer;
@@ -30,8 +28,8 @@ public class ModFabric implements ModInitializer {
 	}
 
 	private void loadEvents() {
-		CollectiveMinecraftServerEvents.WORLD_SET_SPAWN.register((ServerLevel serverLevel, ServerLevelData serverLevelData) -> {
-			VillageSpawnEvent.onWorldLoad(serverLevel, serverLevelData);
+		CollectiveMinecraftServerEvents.WORLD_CREATE_SPAWN.register((ServerLevel serverLevel, ServerLevelData serverLevelData) -> {
+			return VillageSpawnEvent.onWorldLoad(serverLevel, serverLevelData);
 		});
 
 		ServerEntityEvents.ENTITY_LOAD.register((Entity entity, ServerLevel serverLevel) -> {
@@ -40,6 +38,6 @@ public class ModFabric implements ModInitializer {
 	}
 
 	private static void setGlobalConstants() {
-		Constants.biomeSpawnPointLoaded = GlobalFabricObjects.fabricLoader.isModLoaded("biomespawnpoint");
+
 	}
 }
