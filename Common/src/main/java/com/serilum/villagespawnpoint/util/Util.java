@@ -12,11 +12,6 @@ import net.minecraft.server.level.ServerLevel;
 
 public class Util {
 	public static BlockPos findNewWorldVillageSpawnPos(ServerLevel serverLevel) {
-		saveWorldCreationSpawnInVillage(serverLevel.getServer());
-		return searchNewWorldVillageSpawnPos(serverLevel);
-	}
-
-	public static BlockPos searchNewWorldVillageSpawnPos(ServerLevel serverLevel) {
 		if (!shouldSearchForVillage(serverLevel)) {
 			return null;
 		}
@@ -62,11 +57,6 @@ public class Util {
 
 	public static void setWorldCreationSpawnInVillage(boolean spawnInVillage) {
 		Variables.worldCreationSpawnInVillage = spawnInVillage;
-	}
-
-	public static void saveWorldCreationSpawnInVillage(MinecraftServer server) {
-		if (Variables.worldCreationSpawnInVillage != null) {
-			ConfigFunctions.setWorldConfigValue(server, Reference.MOD_ID, "spawnInVillage", Variables.worldCreationSpawnInVillage);
-		}
+		ConfigFunctions.setWorldCreationValue(Reference.MOD_ID, "spawnInVillage", spawnInVillage);
 	}
 }
